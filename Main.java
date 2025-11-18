@@ -1,18 +1,18 @@
-import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
 
-public static void writeToFile() {
-    Scanner sc = new Scanner(System.in);
-    System.out.print("Shkruaj tekstin që do të ruhet në file: ");
-    String text = sc.nextLine();
-
+public static void readFile() {
     try {
-        FileWriter writer = new FileWriter("data.txt");
-        writer.write(text);
-        writer.close();
-        System.out.println("Teksti u ruajt me sukses në data.txt!");
+        BufferedReader reader = new BufferedReader(new FileReader("data.txt"));
+        String line;
+
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+
+        reader.close();
     } catch (IOException e) {
-        System.out.println("Gabim gjatë shkrimit në file.");
+        System.out.println("Gabim gjatë leximit të file-it.");
     }
 }
