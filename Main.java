@@ -1,13 +1,8 @@
-public static int countLines(String fileName) {
-    int count = 0;
-
-    try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-        while (br.readLine() != null) {
-            count++;
-        }
-    } catch (IOException e) {
-        System.out.println("Gabim gjatë leximit të file-it.");
+public static void divide(int a, int b) {
+    try {
+        int result = a / b;
+        System.out.println("Rezultati: " + result);
+    } catch (ArithmeticException e) {
+        System.out.println("Nuk mund të pjestosh me zero!");
     }
-
-    return count;
 }
