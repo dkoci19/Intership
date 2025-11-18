@@ -1,8 +1,5 @@
-public static void divide(int a, int b) {
-    try {
-        int result = a / b;
-        System.out.println("Rezultati: " + result);
-    } catch (ArithmeticException e) {
-        System.out.println("Nuk mund të pjestosh me zero!");
+public static void validateNumber(int number) {
+    if (number < 20) {
+        throw new IllegalArgumentException("Numri duhet të jetë të paktën 20!");
     }
 }
